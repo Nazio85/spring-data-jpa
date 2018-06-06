@@ -20,26 +20,8 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-//        ArticleRepository articleRepository = ctx.getBean("articleRepository", ArticleRepository.class);
-//        Optional<Article> articleOptional = articleRepository.findById(1L);
-//        articleOptional.ifPresent(article -> System.out.println(article.getAuthor()));
-
-
-
-
-    }
-
-    @PostConstruct
-    public void createData(){
-        User user = new User();
-        user.setEmail("vasia@ya.ru")
-                .setPassword("123");
-
-
-        Category category = new Category();
-        category.setTitle("Разное");
-        Category category2 = new Category();
-        category.setTitle("Обовсем");
+        ArticleRepository articleRepository = ctx.getBean("articleRepository", ArticleRepository.class);
+        Optional<Article> articleOptional = articleRepository.findById(1L);
 
     }
 
